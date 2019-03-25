@@ -1,0 +1,39 @@
+<ion-content>
+    <ion-grid>
+        <ion-row>
+        <ion-col class= "loguito" size="2"><img src="../assets/img/logo.png"></ion-col>
+        <ion-col size="10"> </ion-col>
+      </ion-row>
+      </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2"> </ion-col>
+      <ion-col size="8">
+        <ion-card>
+          <ion-slide>
+            <ion-img src="../assets/img/cachorro blanco.jpg"></ion-img>
+           <ion-card>
+              <ion-input placeholder="Enter description" [(ngModel)]="text"></ion-input>
+            </ion-card>
+            <ion-item *ngIf="text.length">
+              <input type="file" accept="image/*" (change)="add($event)" />
+              <ion-icon slot="end" name="camera" (click)="add()"></ion-icon>
+            </ion-item>
+          </ion-slide>
+          <ion-slide>
+            <ion-img src="../assets/img/perroboo.jpg"></ion-img>
+            <ion-item>
+              <ion-input placeholder="Enter description" [(ngModel)]="text"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="text.length">
+              <input type="file" accept="image/*" (change)="add($event)" />
+              <ion-icon slot="end" name="camera" (click)="add()"></ion-icon>
+            </ion-item>
+          </ion-slide>
+        </ion-card>
+      </ion-col>
+      <ion-col size="2"> </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
