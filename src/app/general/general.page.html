@@ -13,9 +13,9 @@
         <ion-card>
           <ion-slide>
             <ion-img src="../assets/img/cachorro blanco.jpg"></ion-img>
-           <ion-card>
+            <ion-item>
               <ion-input placeholder="Enter description" [(ngModel)]="text"></ion-input>
-            </ion-card>
+            </ion-item>
             <ion-item *ngIf="text.length">
               <input type="file" accept="image/*" (change)="add($event)" />
               <ion-icon slot="end" name="camera" (click)="add()"></ion-icon>
