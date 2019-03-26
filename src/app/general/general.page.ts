@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeneralPage implements OnInit {
 
+  public fotos:Array<string> = []; 
+
   constructor() { }
 
   ngOnInit() {
