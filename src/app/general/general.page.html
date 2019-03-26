@@ -6,8 +6,6 @@
 </ion-toolbar>
 </ion-header>
 
-
-
 <ion-content>
     <ion-grid>
         <ion-row>
@@ -21,20 +19,20 @@
       <ion-col size="2"> </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col size="8">
-        <ion-card class= "carta">
-            <ion-img src="../assets/img/cachorro blanco.jpg" ></ion-img>
+      <ion-col size="8">       
+        <ion-card class= "carta" *ngFor="let foto of fotos">
+            <ion-img src={{foto.foto}}></ion-img>
             <img class= "logopag" src="../assets/icon/logo-huella.png"  >
-         
+            <ion-note color="secundary">Comentario</ion-note>
               <div>
                <ion-input placeholder="añadir" type="text">--Descripcion y comentarios sobre las fotos
                  que ponen los usuarios--
                </ion-input>
                <ion-icon name="arrow-dropright" (click)="addComentario()"></ion-icon>
-             <li *ngFor="let listafoto of fotos"></li>
              
               </div>  
         </ion-card>
+      
       </ion-col>
     </ion-row>
     <ion-row>
