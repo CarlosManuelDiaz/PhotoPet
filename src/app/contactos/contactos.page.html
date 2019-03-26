@@ -10,21 +10,12 @@
 </ion-toolbar>
 <ion-grid>
   <ion-row>
-        <ion-col size="6" *ngFor="let contacto of contactos">
-            <ion-card>
-                <ion-img src="{{ contacto.imagen }}"></ion-img>
-                <ion-icon slot="start" [name]="contacto.icon"></ion-icon>
-                <ion-label slot="end">{{ contacto.nombre }}</ion-label>
-              </ion-card>
-        </ion-col>
-      <!-- <ion-content>
-        <ion-item-group>
-          <ion-item size="6" *ngFor="let contacto of contactos">
-            <ion-img src="{{ contacto.imagen }}"></ion-img>
-            <ion-label>{{ contacto.nombre }}</ion-label>
-          </ion-item>
-        </ion-item-group>
-      </ion-content> -->
-    
+    <ion-col size="6" *ngFor="let contacto of contactos">
+      <ion-card>
+        <ion-img src="{{ contacto.imagen }}"></ion-img>
+        <ion-icon slot="start" [name]="contacto.icon"></ion-icon>
+        <ion-label slot="end">{{ contacto.nombre }}</ion-label>
+      </ion-card>
+    </ion-col>
   </ion-row>
 </ion-grid>
