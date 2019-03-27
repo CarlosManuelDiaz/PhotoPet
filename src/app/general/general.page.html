@@ -25,14 +25,13 @@
             <img class= "logopag" src="../assets/icon/logo-huella.png"  >
             <ion-note color="secundary">Comentario</ion-note>
               <div>
-               <ion-input placeholder="añadir" type="text">--Descripcion y comentarios sobre las fotos
+               <input placeholder="añadir" type="text" [(ngModel)]="model.comentario"/>--Descripcion y comentarios sobre las fotos
                  que ponen los usuarios--
-               </ion-input>
-               <ion-icon name="arrow-dropright" (click)="addComentario()"></ion-icon>
-             
+               
+               <ion-icon name="arrow-dropright" (click)="add()"></ion-icon>
               </div>  
         </ion-card>
-      
+   
       </ion-col>
     </ion-row>
     <ion-row>
