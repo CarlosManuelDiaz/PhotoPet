@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="loguito" size="2"><img src="../assets/icon/logo.png"></ion-col>
+      <ion-col size="10"> </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngFor="let datos of datosperfil">
+    <ion-row>
+      <ion-col size="4"></ion-col>
+      <ion-col><span class="nombre">{{datos.Nombre}}</span></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+      </ion-col>
+      <ion-col>
+        <img class="circle-pic" src={{datos.imagen}} />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="1"></ion-col>
+      <ion-col>
+        <ion-input class="descripcion">Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque nisi purus a
+          tristique at nam, vulputate interdum pulvinar sapien facilisis maecenas velit magna viverra dis eleifend
+          imperdiet gravida. Vitae et commodo erat</ion-input>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let imagen of imagenes">
+        <ion-card>
+          <ion-img src={{imagen.rutaimagen}}></ion-img>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="takePicture()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="galeria()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
