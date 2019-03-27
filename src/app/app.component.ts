@@ -16,9 +16,34 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
-      url: '/list',
-      icon: 'list'
+      title: 'Perfil',
+      url: '/perfil',
+      icon: 'finger-print'
+    },
+    {
+      title: 'Contactos',
+      url: '/contactos',
+      icon: 'contacts'
+    },
+    {
+      title: 'Galeria',
+      url: '/galeria',
+      icon: 'images'
+    },
+    {
+      title: 'Actividades',
+      url: '/actividades',
+      icon: 'sunny'
+    },
+    {
+      title: 'MiMapa',
+      url: '/mimapa',
+      icon: 'compass'
+    },
+    {
+      title: 'MiTienda',
+      url: '/mitienda',
+      icon: 'pin'
     }
   ];
 

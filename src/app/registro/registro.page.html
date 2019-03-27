@@ -1,0 +1,36 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3"></ion-col>
+      <ion-col size="6">
+        <ion-col *ngFor="let icono of iconos">
+          <ion-img [src]="icono.imagen"></ion-img>
+        </ion-col>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="2"></ion-col>
+      <ion-col size="7">
+        <ion-input color="success" placeholder="Usuario"></ion-input>
+        <ion-input color="success" placeholder="Email"></ion-input>
+        <ion-input color="success" placeholder="Contraseña"></ion-input>
+        <ion-input color="success" placeholder="  Repetir Contraseña"></ion-input>
+      </ion-col>
+      <ion-col size="3"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <ion-checkbox checked="false"></ion-checkbox>
+        <a href="#">Acepta las condiciones de uso</a>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size=4></ion-col>
+      <ion-col size="8">
+        <ion-button color="primary">Enviar</ion-button>
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>
+</ion-content>
