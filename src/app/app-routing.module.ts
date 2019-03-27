@@ -4,11 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-<<<<<<< HEAD
-    redirectTo: 'perfil',
-=======
     redirectTo: 'general',
->>>>>>> devnuria
     pathMatch: 'full'
   },
   {
@@ -19,14 +15,17 @@ const routes: Routes = [
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
   },
-<<<<<<< HEAD
-  { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'perfil', loadChildren: './perfil/perfil.module#PerfilPageModule' }
-=======
-  
-  { path: 'general', loadChildren: './general/general.module#GeneralPageModule' }
-
->>>>>>> devnuria
+  {
+    path: 'login',
+  loadChildren: './login/login.module#LoginPageModule'
+},
+  {
+    path: 'perfil',
+  loadChildren: './perfil/perfil.module#PerfilPageModule'
+},
+  {
+    path: 'general',
+    loadChildren: './general/general.module#GeneralPageModule' }
 ];
 
 @NgModule({
