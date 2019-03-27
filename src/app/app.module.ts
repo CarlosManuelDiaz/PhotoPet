@@ -10,15 +10,19 @@ import { Chooser } from '@ionic-native/chooser/ngx';
 import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
+    ReactiveFormsModule,
+    FormsModule,
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule
+    
   ],
   providers: [
     StatusBar,
