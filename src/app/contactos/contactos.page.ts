@@ -11,37 +11,37 @@ export class ContactosPage implements OnInit {
       nombre: 'Alexis',
       url: '/alexis',
       imagen: 'assets/icon/logo.png',
-      icon: 'ribbon'
+      imagenicon: 'assets/icon/logo.png'
     },
     {
       nombre: 'Charly',
       url: '/charly',
       imagen: 'assets/icon/logo.png',
-      icon: 'ribbon'
+      imagenicon: 'assets/icon/logo.png'
     },
     {
       nombre: 'Paco',
       url: '/nuria',
       imagen: 'assets/icon/logo.png',
-      icon: 'ribbon'
+      imagenicon: 'assets/icon/logo.png'
     },
     {
       nombre: 'Pepe',
       url: '/nuria',
       imagen: 'assets/icon/logo.png',
-      icon: 'ribbon'
+      imagenicon: 'assets/icon/logo.png'
     },
     {
       nombre: 'Alberto',
       url: '/nuria',
       imagen: 'assets/icon/logo.png',
-      icon: 'ribbon'
+      imagenicon: 'assets/icon/logo.png'
     },
     {
       nombre: 'Marcos',
       url: '/nuria',
       imagen: 'assets/icon/logo.png',
-      icon: 'ribbon'
+      imagenicon: 'assets/icon/logo.png'
     },
   ];
   constructor() { }
