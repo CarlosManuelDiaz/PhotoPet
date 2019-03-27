@@ -34,7 +34,8 @@ export class PerfilPage implements OnInit {
       quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
+      mediaType: this.camera.MediaType.PICTURE,
+      correctOrientation: true,
     };
     this.camera.getPicture(options).then((imageData) => {
       this.imagenes.push({ rutaimagen: 'data:image/jpeg;base64,' + imageData });
@@ -43,4 +44,18 @@ export class PerfilPage implements OnInit {
       console.log('Camera issue:' + err);
     });
   }
+  galeria() {
+    const options: CameraOptions = {
+      quality: 50,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      sourceType : this.camera.PictureSourceType.PHOTOLIBRARY,
+      correctOrientation: true,
+      };
+      this.camera.getPicture(options).then((imageData) => {
+        this.imagenes.push({ rutaimagen: 'data:image/jpeg;base64,' + imageData });
+      }, (err) => {
+        // Handle error
+        console.log('Camera issue:' + err);
+      });
+    }
 }
