@@ -11,6 +11,10 @@
         <ion-row>
         <ion-col class= "loguito" size="2"><img src="../assets/img/logo.png"></ion-col>
         <ion-col size="10"> </ion-col>
+
+     <!---  <button routerLink="/contactos">Contactos </button>
+       <button routerLink="/list">Lista </button> -->
+
       </ion-row>
       </ion-grid> 
       
@@ -25,9 +29,8 @@
             <img class= "logopag" src="../assets/icon/logo-huella.png"  >
             <ion-note color="secundary">Comentario</ion-note>
               <div>
-               <input placeholder="añadir" type="text" [(ngModel)]="model.comentario"/>--Descripcion y comentarios sobre las fotos
-                 que ponen los usuarios--
-               
+               <input placeholder="añadir" type="text" [(ngModel)]="model.comentario"/>-
+                 
                <ion-icon name="arrow-dropright" (click)="add()"></ion-icon>
               </div>  
         </ion-card>
