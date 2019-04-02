@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { AuthenticationService, UserDetails } from '../authentication.service';
 
 
 @Component({
@@ -8,6 +9,8 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
   styleUrls: ['./perfil.page.scss'],
 })
 export class PerfilPage implements OnInit {
+
+  public details: UserDetails;
 
   public datosperfil = [
     {Nombre: 'Noa', imagen: '../assets/img/perfil-circular.jpg'}
@@ -22,12 +25,18 @@ export class PerfilPage implements OnInit {
     {rutaimagen: '../assets/img/6.jpg'},
   ];
 
-  currentImage: Array<string> = [];
-
-  constructor(private camera: Camera) {}
+    constructor(private camera: Camera, private auth: AuthenticationService) {}
 
 
   ngOnInit() {
+    this.auth.profile().subscribe(
+      user => {
+        this.details = user;
+      },
+      err => {
+        console.error(err);
+      }
+    );
   }
   takePicture() {
     const options: CameraOptions = {

@@ -32,12 +32,8 @@
               }
             ],
             "styles": [
-              {
-                "input": "src/theme/variables.scss"
-              },
-              {
-                "input": "src/global.scss"
-              }
+              "src/global.scss",
+              "theme/variables.scss"
             ],
             "scripts": [],
             "es5BrowserSupport": true

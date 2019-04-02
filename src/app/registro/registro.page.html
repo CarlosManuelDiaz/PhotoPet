@@ -1,20 +1,16 @@
 <ion-content>
   <ion-grid>
+      <ion-row item-self-center>
+          <ion-col size="12" align-self-center>
+            <img class="logo" src="../assets/icon/logo.png">
+          </ion-col>
+        </ion-row>
     <ion-row>
       <ion-col size="3"></ion-col>
       <ion-col size="6">
-        <ion-col *ngFor="let icono of iconos">
-          <ion-img [src]="icono.imagen"></ion-img>
-        </ion-col>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="2"></ion-col>
-      <ion-col size="7">
-        <ion-input color="success" placeholder="Usuario"></ion-input>
-        <ion-input color="success" placeholder="Email"></ion-input>
-        <ion-input color="success" placeholder="Contraseña"></ion-input>
-        <ion-input color="success" placeholder="  Repetir Contraseña"></ion-input>
+        <ion-input color="success" name="user_name" placeholder="Nombre de la mascota" [(ngModel)]='crendentials.user_name'></ion-input>
+        <ion-input color="success" name="email" placeholder="Email" [(ngModel)]='crendentials.email'></ion-input>
+        <ion-input color="success" name="password" placeholder="Contraseña" [(ngModel)]='crendentials.password'></ion-input>
       </ion-col>
       <ion-col size="3"></ion-col>
     </ion-row>
@@ -28,7 +24,7 @@
     <ion-row>
       <ion-col size=4></ion-col>
       <ion-col size="8">
-        <ion-button color="primary">Enviar</ion-button>
+        <ion-button color="primary" (click)='register()'>Enviar</ion-button>
       </ion-col>
       
     </ion-row>

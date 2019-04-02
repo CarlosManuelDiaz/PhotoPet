@@ -11,6 +11,9 @@ import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {AuthenticationService} from './authentication.service';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthGuardService } from './auth-guard.service';
 
 
 @NgModule({
@@ -21,7 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,
@@ -29,6 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     Camera,
     Chooser,
     ImagePicker,
+    AuthenticationService,
+    AuthGuardService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
