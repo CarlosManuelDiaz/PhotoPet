@@ -27,7 +27,8 @@ const routes: Routes = [
 },
   {
     path: 'general',
-    loadChildren: './general/general.module#GeneralPageModule' }
+    loadChildren: './general/general.module#GeneralPageModule' },
+  { path: 'page-modal', loadChildren: './page-modal/page-modal.module#PageModalPageModule' },
 ];
 
 @NgModule({

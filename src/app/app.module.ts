@@ -11,6 +11,7 @@ import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PageModalPageModule } from './page-modal/page-modal.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    PageModalPageModule
   ],
   providers: [
     StatusBar,

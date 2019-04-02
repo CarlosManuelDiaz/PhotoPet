@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-
+import { ModalController } from '@ionic/angular';
+import { ImagenmodalPage } from '../page-modal/page-modal.page';
 
 @Component({
   selector: 'app-perfil',
@@ -14,17 +15,17 @@ export class PerfilPage implements OnInit {
   ];
 
   public imagenes = [
-    {rutaimagen: '../assets/img/1.jpg'},
-    {rutaimagen: '../assets/img/2.jpg'},
-    {rutaimagen: '../assets/img/3.jpg'},
-    {rutaimagen: '../assets/img/4.jpg'},
-    {rutaimagen: '../assets/img/5.jpg'},
-    {rutaimagen: '../assets/img/6.jpg'},
+    {rutaimagen: '../assets/img/1.jpg' , comentario: './comentario.'},
+    {rutaimagen: '../assets/img/2.jpg' , comentario: './comentario.'},
+    {rutaimagen: '../assets/img/3.jpg' , comentario: './comentario.'},
+    {rutaimagen: '../assets/img/4.jpg' , comentario: './comentario.'},
+    {rutaimagen: '../assets/img/5.jpg' , comentario: './comentario.'},
+    {rutaimagen: '../assets/img/6.jpg' , comentario: './comentario.'},
   ];
 
   currentImage: Array<string> = [];
 
-  constructor(private camera: Camera) {}
+  constructor(private camera: Camera, private modalCtrl: ModalController) {}
 
 
   ngOnInit() {
@@ -38,10 +39,10 @@ export class PerfilPage implements OnInit {
       correctOrientation: true,
     };
     this.camera.getPicture(options).then((imageData) => {
-      this.imagenes.push({ rutaimagen: 'data:image/jpeg;base64,' + imageData });
+      this.imagenes.push({ rutaimagen: 'data:image/jpeg;base64,' + imageData, comentario: 'ggvf' });
     }, (err) => {
       // Handle error
-      console.log('Camera issue:' + err);
+      // console.log('Camera issue:' + err);
     });
   }
   galeria() {
@@ -52,10 +53,19 @@ export class PerfilPage implements OnInit {
       correctOrientation: true,
       };
       this.camera.getPicture(options).then((imageData) => {
-        this.imagenes.push({ rutaimagen: 'data:image/jpeg;base64,' + imageData });
+        this.imagenes.push({ rutaimagen: 'data:image/jpeg;base64,' + imageData, comentario: 'hhjgg' });
       }, (err) => {
         // Handle error
-        console.log('Camera issue:' + err);
+        // console.log('Camera issue:' + err);
       });
+    }
+    verImagen( imagen, comentarios) {
+      this.modalCtrl.create({
+        component : ImagenmodalPage,
+        componentProps : {
+          imagen : imagen,
+          comentarios : comentarios,
+        }
+      }).then(modal => modal.present());
     }
 }
