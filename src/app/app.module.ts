@@ -13,6 +13,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -21,7 +23,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     BrowserModule,
     IonicModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    
+    
+
   ],
   providers: [
     StatusBar,

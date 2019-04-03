@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'general',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
@@ -26,7 +26,7 @@ const routes: Routes = [
   loadChildren: './perfil/perfil.module#PerfilPageModule'
 },
   {
-    path: 'general',
+    path: 'galeria',
     loadChildren: './general/general.module#GeneralPageModule' }
 ];
 
