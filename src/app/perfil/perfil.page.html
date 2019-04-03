@@ -3,8 +3,12 @@
     <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="general" ></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 
 <ion-content>
   <ion-grid>
@@ -24,7 +28,7 @@
       </ion-col>
       <ion-col size="9" align-self-start>
         <div class="circular--landscape">
-        <img class="circle-pic" src={{datos.imagen}} />
+        <img class="circle-pic" src={{details?.photo}} />
       </div>
       </ion-col>
     </ion-row>
