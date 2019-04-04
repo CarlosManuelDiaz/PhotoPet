@@ -5,13 +5,8 @@ import { AuthGuardService } from './auth-guard.service';
 const routes: Routes = [
   {
     path: '',
-<<<<<<< HEAD
-    redirectTo: 'home',
-    pathMatch: 'full'
-=======
     redirectTo: 'login',
     pathMatch: 'full',
->>>>>>> 5ea45219644d35bd0e5868548f4a6396d3299eee
   },
   {
     path: 'home',
@@ -33,14 +28,9 @@ const routes: Routes = [
   canActivate: [AuthGuardService]
 },
   {
-<<<<<<< HEAD
-    path: 'galeria',
-    loadChildren: './general/general.module#GeneralPageModule' }
-=======
     path: 'general',
     loadChildren: './general/general.module#GeneralPageModule',
     canActivate: [AuthGuardService] }
->>>>>>> 5ea45219644d35bd0e5868548f4a6396d3299eee
 ];
 
 @NgModule({

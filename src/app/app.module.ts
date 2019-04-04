@@ -27,13 +27,11 @@ import { AuthGuardService } from './auth-guard.service';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-<<<<<<< HEAD
+    HttpClientModule,
+
     
     
 
-=======
-    HttpClientModule
->>>>>>> 5ea45219644d35bd0e5868548f4a6396d3299eee
   ],
   providers: [
     StatusBar,
