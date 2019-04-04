@@ -1,6 +1,7 @@
 const express = require("express")
 const images = express.Router()
 const cors = require("cors")
+const jwt = require("jsonwebtoken")
 
 const images = require("../models/images")
 images.use(cors())
