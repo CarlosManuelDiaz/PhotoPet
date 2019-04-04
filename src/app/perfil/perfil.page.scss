@@ -6,22 +6,30 @@ ion-content{
     height: 50px;
  }
 
-.circle-pic{
-   width:160px;
-   height:200px;
-   -webkit-border-radius: 30%;
-   border-radius: 50%;
-}
+ .circular--landscape {
+    display: inline-block;
+    position: relative;
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .circular--landscape img {
+    width: auto;
+    height: auto;  
+ }
 .nombre{
-    font-size: 35px;
-    text-align: left;
-    margin-left: 17px;
+    font-size: 46px;
+    text-align: center;
+    
 }
-.fotoperfil{
-    width:100px;
-    height:160px;
-}
+
 .descripcion{
     text-align: justify;
     font-family: 'Gill Sans';
+}
+.imagen{
+    width: auto;
+    height: auto;
 }

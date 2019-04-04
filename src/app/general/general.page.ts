@@ -27,16 +27,16 @@ export class GeneralPage implements OnInit {
     },
 ];
 
-añadirComentario=[{comentario:'hola perrito,le gustan las pelotas y la comida vegetal'}];
-model: any={};
+añadirComentario = [{comentario: 'hola perrito,le gustan las pelotas y la comida vegetal'}];
+model: any = {};
 
-add(){
+add() {
 this.añadirComentario.push(this.model);
 }
-  
+
 
   ngOnInit() {
   }
-  
+
 
 }
