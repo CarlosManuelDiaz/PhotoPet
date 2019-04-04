@@ -32,3 +32,17 @@ ion-content{
     padding: 1px;
     object-fit: cover;
 }
+.btColor{
+    
+    ion-icon{
+        font-size: 20px;
+        color: black;
+    }
+    margin-top: 10%;
+    --background: transparent;
+}
+.icon{
+    color: black;
+    border: solid 1px rgba(0, 0, 0, 0.475);
+    border-radius: 10px;
+}

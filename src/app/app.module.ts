@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PageModalPageModule } from './page-modal/page-modal.module';
-
+import {  EditarPageModule } from './editar/editar.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +23,8 @@ import { PageModalPageModule } from './page-modal/page-modal.module';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    PageModalPageModule
+    PageModalPageModule,
+    EditarPageModule
   ],
   providers: [
     StatusBar,

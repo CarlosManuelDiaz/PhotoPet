@@ -29,6 +29,7 @@ const routes: Routes = [
     path: 'general',
     loadChildren: './general/general.module#GeneralPageModule' },
   { path: 'page-modal', loadChildren: './page-modal/page-modal.module#PageModalPageModule' },
+  { path: 'editar', loadChildren: './editar/editar.module#EditarPageModule' },
 ];
 
 @NgModule({

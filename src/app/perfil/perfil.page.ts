@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { ModalController } from '@ionic/angular';
 import { ImagenmodalPage } from '../page-modal/page-modal.page';
-
+import {  EditarPage } from '../editar/editar.page';
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.page.html',
@@ -15,12 +15,12 @@ export class PerfilPage implements OnInit {
   ];
 
   public imagenes = [
-    {rutaimagen: '../assets/img/1.jpg' , comentario: './comentario.'},
-    {rutaimagen: '../assets/img/2.jpg' , comentario: './comentario.'},
-    {rutaimagen: '../assets/img/3.jpg' , comentario: './comentario.'},
-    {rutaimagen: '../assets/img/4.jpg' , comentario: './comentario.'},
-    {rutaimagen: '../assets/img/5.jpg' , comentario: './comentario.'},
-    {rutaimagen: '../assets/img/6.jpg' , comentario: './comentario.'},
+    {rutaimagen: '../assets/img/1.jpg'},
+    {rutaimagen: '../assets/img/2.jpg'},
+    {rutaimagen: '../assets/img/3.jpg'},
+    {rutaimagen: '../assets/img/4.jpg'},
+    {rutaimagen: '../assets/img/5.jpg'},
+    {rutaimagen: '../assets/img/6.jpg'},
   ];
 
   currentImage: Array<string> = [];
@@ -39,7 +39,7 @@ export class PerfilPage implements OnInit {
       correctOrientation: true,
     };
     this.camera.getPicture(options).then((imageData) => {
-      this.imagenes.push({ rutaimagen: 'data:image/jpeg;base64,' + imageData, comentario: 'ggvf' });
+      this.imagenes.push({ rutaimagen: 'data:image/jpeg;base64,' + imageData});
     }, (err) => {
       // Handle error
       // console.log('Camera issue:' + err);
@@ -53,7 +53,7 @@ export class PerfilPage implements OnInit {
       correctOrientation: true,
       };
       this.camera.getPicture(options).then((imageData) => {
-        this.imagenes.push({ rutaimagen: 'data:image/jpeg;base64,' + imageData, comentario: 'hhjgg' });
+        this.imagenes.push({ rutaimagen: 'data:image/jpeg;base64,' + imageData});
       }, (err) => {
         // Handle error
         // console.log('Camera issue:' + err);
@@ -67,5 +67,12 @@ export class PerfilPage implements OnInit {
           comentarios : comentarios,
         }
       }).then(modal => modal.present());
+
     }
+    editarpage() {
+      this.modalCtrl.create({
+        component : EditarPage
+      }).then(modal => modal.present());
+    }
+
 }

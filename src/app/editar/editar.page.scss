@@ -1,0 +1,15 @@
+ion-content{
+    --background: linear-gradient(to bottom, rgba(245,0,196,1) 0%, rgba(199,245,14,1) 100%)
+}
+.bton{
+    color: black;
+    border: solid 1px rgba(0, 0, 0, 0.475);
+    font-size: 10px;
+}
+ion-input{
+    border: solid 1px black;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.831);
+}
