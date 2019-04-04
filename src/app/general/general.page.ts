@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { importType } from '@angular/compiler/src/output/output_ast';
-import { BooleanValueAccessor } from '@ionic/angular';
-import { addAllToArray } from '@angular/core/src/render3/util';
 
 
 @Component({
@@ -27,14 +24,13 @@ export class GeneralPage implements OnInit {
     },
 ];
 
-añadirComentario = [{comentario: 'hola perrito,le gustan las pelotas y la comida vegetal'}];
-model: any = {};
+  comentarios = [{comentario: 'hola perrito,le gustan las pelotas y la comida vegetal'}];
+  model: any = {};
 
-add() {
-this.añadirComentario.push(this.model);
-}
-
-
+  add() {
+  this.comentarios.push(this.model);
+  console.log(this.model);
+  }
   ngOnInit() {
   }
 

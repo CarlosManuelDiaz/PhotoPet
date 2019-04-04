@@ -9,6 +9,7 @@ export interface UserDetails {
   user_name: string;
   email: string;
   password: string;
+  id_photo_perfil: string;
   exp: number;
   iat: number;
 }

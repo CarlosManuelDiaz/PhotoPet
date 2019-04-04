@@ -23,9 +23,9 @@
           <ion-card class="carta" *ngFor="let foto of fotos">
             <ion-img src={{foto.foto}}></ion-img>
             <img class="logopag" src="../assets/icon/logo-huella.png">
-            <ion-card-subtitle color="secondary">Comentarios</ion-card-subtitle>
+            <ion-card-subtitle color="" *ngFor="let comentario of comentarios">{{comentario.comentario}}</ion-card-subtitle>
             <ion-input placeholder="añadir" type="text" [(ngModel)]="model.comentario"></ion-input>
-             <ion-icon name="arrow-dropright" (click)="add()"></ion-icon>
+             <ion-button (click)="add()">Añadir</ion-button>
           </ion-card>
         </ion-col>
         <ion-col size="1"> </ion-col>

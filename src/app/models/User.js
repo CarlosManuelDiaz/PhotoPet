@@ -21,7 +21,10 @@ module.exports = db.sequelize.define(
         created:{
             type: Sequelize.DATE,
             defaultValue: Sequelize.NOW
-        }
+        },
+        id_photo_perfil:{
+            type: Sequelize.STRING
+        },
     },
     {
         timestamps: false
