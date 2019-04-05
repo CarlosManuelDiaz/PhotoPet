@@ -18,6 +18,8 @@ import { AuthGuardService } from './auth-guard.service';
 import { PageModalPageModule } from './page-modal/page-modal.module';
 import {  EditarPageModule } from './editar/editar.module';
 
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -28,8 +30,15 @@ import {  EditarPageModule } from './editar/editar.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+<<<<<<< HEAD
     PageModalPageModule,
     EditarPageModule
+=======
+
+    
+    
+
+>>>>>>> devnuria
   ],
   providers: [
     StatusBar,
