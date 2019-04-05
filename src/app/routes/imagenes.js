@@ -1,27 +1,26 @@
 const express = require("express")
-const images = express.Router()
+const imagenes = express.Router()
+var mysql = require('mysql')
 const cors = require("cors")
-const jwt = require("jsonwebtoken")
 
-const images = require("../models/images")
-images.use(cors())
+imagenes.use(cors())
 
-images.get('/perfil', (req, res) => {
-    var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "",
+  database: "photopet"
+});
 
-    User.findOne({
-        where: {
-            id_user: decoded.id_user
-        },
-    })
-    .then(image => {
-        if (image) {
-            res.json(image)
-        } else {
-            res.send('la imagen no existe')
-        }
-    })
-    .catch(err=>{
-        res.send('Error en el catch:' + err)
-    })
+imagenes.get("/general", (req,res) =>{
+  con.connect(function(err) {
+    if (err) throw err;
+    con.query("SELECT * FROM images", function (err, result, fields) {
+      if (err) throw err;
+      console.log(result);
+      res.send(result)
+    });
+  });
 })
+
+module.exports = imagenes

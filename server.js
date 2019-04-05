@@ -10,8 +10,12 @@ app.use(bodyParser.json())
 app.use(cors())
 
 var Users = require ('./src/app/routes/Users')
+var Imagenes = require ('./src/app/routes/imagenes')
 
-app.use('/', Users)
+app.use('/', Users, Imagenes)
+
+
+
 
 app.listen(port, () => {
     console.log('Corriendo en http://localhost:' + port)
