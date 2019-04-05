@@ -13,8 +13,10 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col class="loguito" size="2"><img src="../assets/icon/logo.png"></ion-col>
-      <ion-col size="10"> </ion-col>
+      <ion-col class="loguito" size="2">
+        <img src="../assets/icon/logo.png"/>
+      </ion-col>
+      <ion-col size="10"></ion-col>
     </ion-row>
   </ion-grid>
   <ion-grid *ngFor="let datos of datosperfil">
@@ -33,6 +35,15 @@
       </ion-col>
     </ion-row>
     <ion-row>
+      <!--Boton editar-->
+        <ion-col class="btColor">
+            <ion-button (click)="editarpage()" fill="clear">
+              <ion-icon class="icon" name="build"></ion-icon>
+              </ion-button>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+      
       <ion-col size="1"></ion-col>
       <ion-col>
         <ion-input class="descripcion">Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque nisi purus a
@@ -45,9 +56,10 @@
   <ion-grid>
     <ion-row>
       <ion-col size="6" *ngFor="let imagen of imagenes">
-        <ion-card>
-          <ion-img src={{imagen.rutaimagen}}></ion-img>
-        </ion-card>
+        <img
+          class="galeria"
+          src="{{ imagen.rutaimagen }}"
+          (click)="verImagen(imagen.rutaimagen, imagen.comentario)"/>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -62,3 +74,4 @@
     </ion-fab-button>
   </ion-fab>
 </ion-content>
+

@@ -15,6 +15,8 @@ import {AuthenticationService} from './authentication.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuardService } from './auth-guard.service';
 
+import { PageModalPageModule } from './page-modal/page-modal.module';
+import {  EditarPageModule } from './editar/editar.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +27,9 @@ import { AuthGuardService } from './auth-guard.service';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    PageModalPageModule,
+    EditarPageModule
   ],
   providers: [
     StatusBar,
