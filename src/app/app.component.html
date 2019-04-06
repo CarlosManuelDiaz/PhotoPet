@@ -13,6 +13,8 @@
             <!-- Cuando ponemos [routerDirection]="'root'" significa que a la pagina donde naveguemos sera nuestro root  -->
             <!-- Esto significa que no tiene "atras" porque es la raiz, por eso el boton de back no funciona -->
             <!-- Si queremos navegar hacia 'adelante' tenemos que poner forward y asi el boton de back aparecera -->
+            <!-- Podrian incluso quitar lo del routerDirection y tambien funcionaría -->
+            <!-- <ion-item [routerLink]="[p.url]"></ion-item> -->
             <ion-item [routerDirection]="'forward'" [routerLink]="[p.url]">
               <ion-icon slot="start" [name]="p.icon"></ion-icon>
               <ion-label>
