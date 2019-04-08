@@ -17,6 +17,8 @@ import { AuthGuardService } from './auth-guard.service';
 
 import { PageModalPageModule } from './page-modal/page-modal.module';
 import {  EditarPageModule } from './editar/editar.module';
+import { DataApiService } from './data-api.service';
+
 
 
 
@@ -30,15 +32,9 @@ import {  EditarPageModule } from './editar/editar.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-<<<<<<< HEAD
     PageModalPageModule,
-    EditarPageModule
-=======
-
+    EditarPageModule,
     
-    
-
->>>>>>> devnuria
   ],
   providers: [
     StatusBar,
@@ -48,6 +44,7 @@ import {  EditarPageModule } from './editar/editar.module';
     ImagePicker,
     AuthenticationService,
     AuthGuardService,
+    DataApiService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

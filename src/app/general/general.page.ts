@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+//import {ImagenesgeneralService} from '../imagenesgeneral.service' 
+//import{imageInterface} from '../data-api.service';
+import { DataApiService } from '../data-api.service';
 
 @Component({
   selector: 'app-general',
@@ -10,19 +12,31 @@ import { Component, OnInit } from '@angular/core';
 
 export class GeneralPage implements OnInit {
 
-  constructor() { }
+ constructor(private dataApi:DataApiService){}
 
-  public fotos: Array<any> = [{
-    comentario: 'este perro es blanco',
+private images: ImageData
+
+ngOnInit(){ this.getListImages()}
+
+getListImages(): void{
+this.dataApi.getAllImages().subscribe(
+  (images: ImageData)=>{
+  console.log(images)
+  this.images=images
+  });    
+}
+
+  
+ /* public fotos: Array<any> = [{
+    comentario: 'Jugando con la pelota',
     foto: '../assets/img/perro.jpg'
   }, {
-      comentario: 'este perro es blanco',
+      comentario: 'haciendo el dia',
       foto: '../assets/img/perro.jpg'
     }, {
-      comentario: 'este perro es blanco',
+      comentario: ':) :)',
       foto: '../assets/img/perro.jpg'
     },
-];
 
   comentarios = [{comentario: 'hola perrito,le gustan las pelotas y la comida vegetal'}];
   model: any = {};
@@ -32,7 +46,7 @@ export class GeneralPage implements OnInit {
   console.log(this.model);
   }
   ngOnInit() {
-  }
+  }*/
 
 
 }
