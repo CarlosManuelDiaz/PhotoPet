@@ -16,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthGuardService } from './auth-guard.service';
 
 import { PageModalPageModule } from './page-modal/page-modal.module';
-import {  EditarPageModule } from './editar/editar.module';
+import { EditarPageModule } from './editar/editar.module';
+import { MapaPageModule } from './mapa/mapa.module';
 
 
 
@@ -30,15 +31,9 @@ import {  EditarPageModule } from './editar/editar.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-<<<<<<< HEAD
     PageModalPageModule,
-    EditarPageModule
-=======
-
-    
-    
-
->>>>>>> devnuria
+    EditarPageModule,
+    MapaPageModule
   ],
   providers: [
     StatusBar,
