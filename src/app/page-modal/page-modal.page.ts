@@ -8,10 +8,12 @@ import { ModalController, NavParams } from '@ionic/angular';
 export class ImagenmodalPage implements OnInit {
   imagen: string;
   comentarios: string;
+  subtitulo: string;
 
   constructor(  private modalCtrl: ModalController, private navparams: NavParams) {
     this.imagen =  this.navparams.get('imagen');
     this.comentarios =  this.navparams.get('comentarios');
+    this.subtitulo =  this.navparams.get('subtitulo');
   }
 
   ngOnInit() {

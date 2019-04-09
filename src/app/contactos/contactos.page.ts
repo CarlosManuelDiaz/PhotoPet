@@ -40,7 +40,7 @@ export class ContactosPage implements OnInit {
     {
       nombre: 'Marcos',
       url: '/nuria',
-      imagen: 'assets/icon/logo.png',
+      imagen: 'assets/icon/logo-huella.png',
       imagenicon: 'assets/icon/logo.png'
     },
   ];

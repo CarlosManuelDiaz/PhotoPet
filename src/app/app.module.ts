@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
+
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
@@ -15,8 +16,11 @@ import {AuthenticationService} from './authentication.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuardService } from './auth-guard.service';
 
+
 import { PageModalPageModule } from './page-modal/page-modal.module';
 import {  EditarPageModule } from './editar/editar.module';
+import { ActividadesPageModule} from './actividades/actividades.module';
+
 
 
 
@@ -30,15 +34,9 @@ import {  EditarPageModule } from './editar/editar.module';
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-<<<<<<< HEAD
     PageModalPageModule,
-    EditarPageModule
-=======
-
-    
-    
-
->>>>>>> devnuria
+    EditarPageModule,
+    ActividadesPageModule
   ],
   providers: [
     StatusBar,

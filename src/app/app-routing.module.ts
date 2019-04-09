@@ -30,7 +30,8 @@ const routes: Routes = [
   {
     path: 'general',
     loadChildren: './general/general.module#GeneralPageModule',
-    canActivate: [AuthGuardService] }
+    canActivate: [AuthGuardService] },  { path: 'actividades', loadChildren: './actividades/actividades.module#ActividadesPageModule' }
+
 ];
 
 @NgModule({

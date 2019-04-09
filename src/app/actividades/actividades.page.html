@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="general"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor='let actividad of actividades' (click)="verImagen(actividad.imagen, actividad.titulo, actividad.subtitulo)">
+    <ion-img class='imagen' src="{{actividad.imagen}}">
+    </ion-img>
+    <ion-card-title class="card-title">{{actividad.titulo}}</ion-card-title>
+    <ion-card-subtitle class="card-subtitle" color="dark">{{actividad.subtitulo}}</ion-card-subtitle>
+  </ion-card>
+</ion-content>

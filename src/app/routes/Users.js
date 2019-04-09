@@ -1,16 +1,19 @@
 const express = require("express")
-const users = express.Router()
+const app = express.Router()
 const cors = require("cors")
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt")
+var mysql = require('mysql')
+const bodyparser = require('body-parser')
 
 const User = require("../models/User")
-users.use(cors())
+app.use(cors());
+app.use(bodyparser.json());
 
 process.env.SECRET_KEY = 'secret'
 
 //registro
-users.post("/registro", (req, res) => {
+app.post("/registro", (req, res) => {
     const today = new Date()
     const userData = {
         user_name: req.body.user_name,
@@ -47,7 +50,7 @@ users.post("/registro", (req, res) => {
 })
 
 //Login
-users.post('/login', (req, res)=>{
+app.post('/login', (req, res)=>{
     User.findOne({
         where:{
             email: req.body.email
@@ -68,28 +71,30 @@ users.post('/login', (req, res)=>{
     })
 })
 
+var connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "photopet"
+  });
+
 //perfil
-users.get('/perfil', (req, res) => {
+app.get('/perfil', (req, res) => {
     var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
-
-    User.findOne({
-        where: {
-            id_user: decoded.id_user
-        }
-    })
-        .then(user => {
-            if (user) {
-                res.json(user)
-            } else {
-                res.send('El usuario no existe')
+    var id_user = decoded.id_user
+        connection.query("SELECT user_name, id_photo_perfil, imagesprofile.urlphoto FROM users INNER JOIN imagesprofile ON users.id_user = imagesprofile.id_user WHERE users.id_user=? ", [id_user],
+            function (err, result) {
+                if (result) {
+                    res.json(result)
+                } else {
+                    res.send(err)
+                }
             }
-        })
-        .catch(err=>{
-            res.send('Error en el catch:' + err)
-        })
-})
+        )
+});
 
 
 
 
-module.exports = users
+
+module.exports = app

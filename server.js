@@ -11,9 +11,9 @@ app.use(bodyParser.json())
 app.use(cors())
 
 var Users = require ('./src/app/routes/Users')
-var Imagenes = require ('./src/app/routes/imagenes')
 
-app.use('/', Users, Imagenes)
+
+app.use('/', Users)
 
 
 
