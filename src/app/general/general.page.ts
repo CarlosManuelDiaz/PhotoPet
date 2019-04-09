@@ -24,10 +24,13 @@ export class GeneralPage implements OnInit {
     },
 ];
 
-  comentarios = [{comentario: 'hola perrito,le gustan las pelotas y la comida vegetal'}];
+  comentarios = [
+    {comentario: 'hola perrito,le gustan las pelotas y la comida vegetal'},
+    {comentario: 'otro comentario'},
+  ];
   model: any = {};
 
-  add() {
+  add(): void {
   this.comentarios.push(this.model);
   console.log(this.model);
   }
