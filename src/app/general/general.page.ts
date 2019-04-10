@@ -26,6 +26,15 @@ this.dataApi.getAllImages().subscribe(
   });    
 }
 
+private add:number=2;
+
+addLike():number{
+const like = this.add++
+console.log(like)
+return like;
+
+}
+
   
  /* public fotos: Array<any> = [{
     comentario: 'Jugando con la pelota',
