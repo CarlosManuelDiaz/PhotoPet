@@ -18,14 +18,9 @@ import { AuthGuardService } from './auth-guard.service';
 
 
 import { PageModalPageModule } from './page-modal/page-modal.module';
-<<<<<<< HEAD
 import {  EditarPageModule } from './editar/editar.module';
 import { ActividadesPageModule} from './actividades/actividades.module';
-
-=======
-import { EditarPageModule } from './editar/editar.module';
 import { MapaPageModule } from './mapa/mapa.module';
->>>>>>> devalexis
 
 
 
@@ -41,11 +36,8 @@ import { MapaPageModule } from './mapa/mapa.module';
     HttpClientModule,
     PageModalPageModule,
     EditarPageModule,
-<<<<<<< HEAD
-    ActividadesPageModule
-=======
+    ActividadesPageModule,
     MapaPageModule
->>>>>>> devalexis
   ],
   providers: [
     StatusBar,

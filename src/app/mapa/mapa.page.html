@@ -1,33 +1,27 @@
 <ion-content>
-    <ion-header>
-        <ion-toolbar color="dark">
-        <ion-title>MiMapa</ion-title>
-          <ion-buttons slot="end">
-            <ion-menu-button></ion-menu-button>
-          </ion-buttons>
-          <ion-buttons slot="start">
-            <ion-back-button defaultHref="general" ></ion-back-button>
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
-  <ion-grid>
-    <ion-row>
-      <ion-col size="1"></ion-col>
-      <ion-col size="10" class="galeria" >
-            <img src="assets/img/mapa.jpg" alt="" />
-      </ion-col>
-    <ion-col size=""></ion-col>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>MiMapa</ion-title>
+      <ion-buttons slot="end">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="general"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" class="galeria">
+          <ion-img src="assets/img/mapa.jpg"></ion-img>
+        </ion-col>
+      </ion-row>
+      <ion-row>
         <ion-col size="1"></ion-col>
         <ion-col size="10">
-          <ion-input class="colorInput" placeholder=" Burcar">
-            <ion-icon slot="end" name="search"></ion-icon></ion-input>
+          <ion-searchbar placeholder="Buscar"></ion-searchbar>
         </ion-col>
-        <ion-col></ion-col>
-        <ion-col size="4"></ion-col>
-        <ion-col size="6">
-            <ion-button>Buscar tienda</ion-button>
-              <ion-icon slot="end" name="search"></ion-icon>
-          </ion-col>
       </ion-row>
     </ion-grid>
-</ion-content>
+  </ion-content>

@@ -32,11 +32,7 @@ export interface TokenPayload {
 export class AuthenticationService {
   private token: string;
   // conexión para devapp
-<<<<<<< HEAD
   public rootUrl = 'http://192.168.1.77:3000';
-=======
-  //  public rootUrl = 'http://192.168.1.53:3000';
->>>>>>> devalexis
   // conexión en local
   // public rootUrl = 'http://localhost:3000';
 
@@ -114,11 +110,5 @@ export class AuthenticationService {
     window.localStorage.removeItem('usertoken');
     this.router.navigateByUrl('/login');
   }
-<<<<<<< HEAD
-=======
 
 }
->>>>>>> devalexis
-
-}
-
