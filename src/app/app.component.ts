@@ -27,18 +27,13 @@ export class AppComponent {
       icon: 'basket'
     },
     {
-      title: 'Galeria',
-      url: '/galeria',
-      icon: 'images'
-    },
-    {
       title: 'Actividades',
       url: '/actividades',
       icon: 'sunny'
     },
     {
-      title: 'MiTienda',
-      url: '/mitienda',
+      title: 'Mapa',
+      url: '/mapa',
       icon: 'pin'
     }
   ];

@@ -10,37 +10,32 @@ export class productospage implements OnInit {
     {
       nombre: 'Pienso',
       url: '/alexis',
-      imagen: 'assets/icon/logo.png',
+      imagen: 'assets/img/producto1.jpg',
     },
     {
       nombre: 'Cepillo',
-      url: '/charly',
-      imagen: 'assets/icon/logo.png',
+      url: '/',
+      imagen: 'assets/img/cepillo.jpg',
     },
     {
       nombre: 'Correa',
-      url: '/nuria',
-      imagen: 'assets/icon/logo.png',
+      url: '/',
+      imagen: 'assets/img/correa.jpg',
     },
     {
       nombre: 'Bozal',
-      url: '/nuria',
-      imagen: 'assets/icon/logo.png',
+      url: '/',
+      imagen: 'assets/img/producto2.jpg',
     },
     {
-      nombre: 'Man',
-      url: '/nuria',
-      imagen: 'assets/icon/logo.png',
+      nombre: 'Comedero',
+      url: '/',
+      imagen: 'assets/img/bebedero.jpg',
     },
     {
-      nombre: 'Marcos',
-      url: '/nuria',
-<<<<<<< HEAD:src/app/contactos/contactos.page.ts
-      imagen: 'assets/icon/logo-huella.png',
-      imagenicon: 'assets/icon/logo.png'
-=======
-      imagen: 'assets/icon/logo.png',
->>>>>>> devalexis:src/app/productos/productos.page.ts
+      nombre: 'Caseta',
+      url: '/',
+      imagen: 'assets/img/Caseta.jpg',
     },
   ];
   constructor() { }
