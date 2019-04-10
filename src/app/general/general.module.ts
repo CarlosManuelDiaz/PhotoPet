@@ -21,6 +21,7 @@ const routes: Routes = [
     CommonModule,
     IonicModule,
     RouterModule.forChild(routes)
+    
   ],
   declarations: [GeneralPage]
 })
