@@ -22,9 +22,9 @@ export class AppComponent {
       icon: 'finger-print'
     },
     {
-      title: 'Contactos',
-      url: '/contactos',
-      icon: 'contacts'
+      title: 'Productos',
+      url: '/productos',
+      icon: 'basket'
     },
     {
       title: 'Galeria',
@@ -35,11 +35,6 @@ export class AppComponent {
       title: 'Actividades',
       url: '/actividades',
       icon: 'sunny'
-    },
-    {
-      title: 'MiMapa',
-      url: '/mapa',
-      icon: 'compass'
     },
     {
       title: 'MiTienda',
