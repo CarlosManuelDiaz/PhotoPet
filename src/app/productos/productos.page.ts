@@ -1,47 +1,41 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-contactos',
-  templateUrl: './contactos.page.html',
-  styleUrls: ['./contactos.page.scss'],
+  selector: 'app-productos',
+  templateUrl: './productos.page.html',
+  styleUrls: ['./productos.page.scss'],
 })
-export class ContactosPage implements OnInit {
-  public contactos = [
+export class productospage implements OnInit {
+  public productos = [
     {
-      nombre: 'Alexis',
+      nombre: 'Pienso',
       url: '/alexis',
       imagen: 'assets/icon/logo.png',
-      imagenicon: 'assets/icon/logo.png'
     },
     {
-      nombre: 'Charly',
+      nombre: 'Cepillo',
       url: '/charly',
       imagen: 'assets/icon/logo.png',
-      imagenicon: 'assets/icon/logo.png'
     },
     {
-      nombre: 'Paco',
+      nombre: 'Correa',
       url: '/nuria',
       imagen: 'assets/icon/logo.png',
-      imagenicon: 'assets/icon/logo.png'
     },
     {
-      nombre: 'Pepe',
+      nombre: 'Bozal',
       url: '/nuria',
       imagen: 'assets/icon/logo.png',
-      imagenicon: 'assets/icon/logo.png'
     },
     {
-      nombre: 'Alberto',
+      nombre: 'Man',
       url: '/nuria',
       imagen: 'assets/icon/logo.png',
-      imagenicon: 'assets/icon/logo.png'
     },
     {
       nombre: 'Marcos',
       url: '/nuria',
       imagen: 'assets/icon/logo.png',
-      imagenicon: 'assets/icon/logo.png'
     },
   ];
   constructor() { }
