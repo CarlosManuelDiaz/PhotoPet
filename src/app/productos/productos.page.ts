@@ -9,32 +9,32 @@ export class productospage implements OnInit {
   public productos = [
     {
       nombre: 'Pienso',
-      url: '/alexis',
+      imagenn: 'assets/img/pienso.jpg',
       imagen: 'assets/icon/logo.png',
     },
     {
       nombre: 'Cepillo',
-      url: '/charly',
+      imagenn: 'assets/img/cepillo.jpg',
       imagen: 'assets/icon/logo.png',
     },
     {
       nombre: 'Correa',
-      url: '/nuria',
+      imagenn: 'assets/img/correa.jpg',
       imagen: 'assets/icon/logo.png',
     },
     {
       nombre: 'Bozal',
-      url: '/nuria',
+      imagenn: 'assets/img/bozal.jpg',
       imagen: 'assets/icon/logo.png',
     },
     {
-      nombre: 'Man',
-      url: '/nuria',
+      nombre: 'Manta',
+      imagenn: 'assets/img/manta.jpg',
       imagen: 'assets/icon/logo.png',
     },
     {
-      nombre: 'Marcos',
-      url: '/nuria',
+      nombre: 'Mordedor',
+      imagenn: 'assets/img/mordedor.jpg',
       imagen: 'assets/icon/logo.png',
     },
   ];

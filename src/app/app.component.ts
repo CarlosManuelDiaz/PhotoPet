@@ -37,8 +37,8 @@ export class AppComponent {
       icon: 'sunny'
     },
     {
-      title: 'MiTienda',
-      url: '/mitienda',
+      title: 'MiMapa',
+      url: '/mapa',
       icon: 'pin'
     }
   ];
