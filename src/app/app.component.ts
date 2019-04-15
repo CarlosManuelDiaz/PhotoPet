@@ -22,20 +22,10 @@ export class AppComponent {
       icon: 'finger-print'
     },
     {
-      title: 'Productos',
-      url: '/productos',
-      icon: 'basket'
-    },
-    {
       title: 'Actividades',
       url: '/actividades',
       icon: 'sunny'
     },
-    {
-      title: 'Mapa',
-      url: '/mapa',
-      icon: 'pin'
-    }
   ];
 
   constructor(

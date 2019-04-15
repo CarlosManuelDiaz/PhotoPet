@@ -5,6 +5,7 @@ import { AuthenticationService, UserDetails } from '../authentication.service';
 import { ModalController } from '@ionic/angular';
 import { ImagenmodalPage } from '../page-modal/page-modal.page';
 import {  EditarPage } from '../editar/editar.page';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -17,11 +18,13 @@ export class PerfilPage implements OnInit {
 
   public details: UserDetails;
   public imagenes = [];
+  public rootUrl = 'http://192.168.1.53:3000';
 
 
   constructor(private camera: Camera,
     private modalCtrl: ModalController,
     private auth: AuthenticationService,
+    private http: HttpClient,
     ) {}
 
 
@@ -46,8 +49,7 @@ export class PerfilPage implements OnInit {
 
     this.camera.getPicture(options).then(
       imageData => {
-        this.imagenes.push({ rutaimagen: 'data:image/jpeg;base64,' + imageData});
-        console.log(this.imagenes);
+        return this.http.post(this.rootUrl + '/subirimagen', imageData);
       },
       err => {
       // Handle error

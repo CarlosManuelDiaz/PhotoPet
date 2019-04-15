@@ -3,24 +3,25 @@
     height: 60px;
 }
 
-/*img{
-    width: 200px;
-    height: 150px;}*/
-    
-    .boton{
-        
-        background-color: rgb(110, 148, 148);
-
-    }
+.boton{        
+        --background: #017e58;
+}
 
 ion-content {
-    --background: linear-gradient(to bottom, rgba(245, 0, 196, 1) 0%, rgba(199, 245, 14, 1) 100%)
+    --background: rgb(218, 127, 133);
 }
 
 
+.likes{
+    margin-top: -5px;
+    margin-left: 5px;   
+    color: #226666; 
+}
 .like{
-    margin-top: 5px;    
+    margin-top: 10px; 
+    margin-left: 5px;   
 }
+
 // .likes{
 //     color: black;
 //     margin-top: -25px;

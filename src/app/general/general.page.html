@@ -18,18 +18,21 @@
   </ion-grid>
   <ion-grid>
     <ion-row>
-      <ion-col size="1"> </ion-col>
-      <ion-col size="10" align-items-center>
+      
+      <ion-col size="12" align-items-center>
         <ion-card *ngFor="let foto of images">
           <ion-img [src]=foto.photo></ion-img>
-          <ion-card-subtitle color="dark">
-            <ion-icon style="font-size: 30px" name="paw" class="like" (click)="addLike()"></ion-icon>
-            <span style="font-size: 20px" class="likes">{{add}}</span>
-          </ion-card-subtitle>
-          <ion-input placeholder="añadir" type="text"></ion-input>
-          <ion-button (click)="add()" class="boton">Añadir</ion-button>
+          <ion-card-title color="dark">
+            <ion-icon style="font-size: 32px" name="paw" class="like" (click)="addLike()"></ion-icon>
+          </ion-card-title>
+          <ion-card-subtitle>
+          <span style="font-size: 16px" class="likes">{{add}} Patitas</span>
+        </ion-card-subtitle>
+        <span>{{foto.comentarios}}</span>
+          <ion-input placeholder="Añadir comentario" type="text" [(ngModel)]="comments"></ion-input>
+          
+          <ion-button (click)="addcomment(comments)" class="boton">Enviar</ion-button>
         </ion-card>
-        <!-- <ion-card>{{images|json}}</ion-card>-->
       </ion-col>
       <ion-col size="1"> </ion-col>
     </ion-row>

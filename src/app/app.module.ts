@@ -20,7 +20,6 @@ import { AuthGuardService } from './auth-guard.service';
 import { PageModalPageModule } from './page-modal/page-modal.module';
 import {  EditarPageModule } from './editar/editar.module';
 import { ActividadesPageModule} from './actividades/actividades.module';
-import { MapaPageModule } from './mapa/mapa.module';
 import { DataApiService } from './data-api.service';
 
 
@@ -39,7 +38,6 @@ import { DataApiService } from './data-api.service';
     PageModalPageModule,
     EditarPageModule,
     ActividadesPageModule,
-    MapaPageModule
   ],
   providers: [
     StatusBar,

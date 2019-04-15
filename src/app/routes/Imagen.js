@@ -16,5 +16,6 @@ images.get("/general", (req,res) =>{
      res.send(result)
    })
   });
-
+  // "SELECT * FROM images INNER JOIN comments ON images.id_images = comments.id_images"
+  
 module.exports = images

@@ -17,7 +17,7 @@ const routes: Routes = [
     loadChildren: './list/list.module#ListPageModule'
   },
   { path: 'registro', loadChildren: './registro/registro.module#RegistroPageModule' },
-  { path: 'productos', loadChildren: './productos/productos.module#ProductosPageModule' },
+
   {
     path: 'login',
   loadChildren: './login/login.module#LoginPageModule'
@@ -30,9 +30,11 @@ const routes: Routes = [
   {
     path: 'general',
     loadChildren: './general/general.module#GeneralPageModule',
-    canActivate: [AuthGuardService] },
-  { path: 'actividades', loadChildren: './actividades/actividades.module#ActividadesPageModule' },
-  { path: 'mapa', loadChildren: './mapa/mapa.module#MapaPageModule' }
+    // canActivate: [AuthGuardService] 
+  },
+
+  { path: 'actividades',
+   loadChildren: './actividades/actividades.module#ActividadesPageModule' }
 
 ];
 
