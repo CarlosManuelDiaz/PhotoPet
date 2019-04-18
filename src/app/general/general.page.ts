@@ -32,7 +32,6 @@ addLike():number{
 const like = this.add++
 console.log(like)
 return like;
-
 }
 
   

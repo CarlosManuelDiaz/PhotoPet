@@ -23,4 +23,5 @@ const routes: Routes = [
   ],
   declarations: [productospage]
 })
+
 export class ProductosPageModule {}

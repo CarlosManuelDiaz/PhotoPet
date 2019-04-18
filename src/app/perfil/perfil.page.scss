@@ -1,27 +1,32 @@
 ion-content{
-    --background: linear-gradient(to bottom, rgba(245,0,196,1) 0%, rgba(199,245,14,1) 100%)
+    --background: -webkit-linear-gradient(#c3c8ce, #7edff0);
 }
+
  .loguito {
     width: 50px;
     height: 50px;
+    
  }
 
  .circular--landscape {
     display: inline-block;
     position: relative;
-    width: 160px;
-    height: 160px;
+    width: 190px;
+    height: 190px;
     overflow: hidden;
     border-radius: 50%;
+    border-color: rgb(125, 125, 187);
   }
   
   .circular--landscape img {
     width: auto;
     height: auto;  
+    border: 2px rgb(185, 185, 202);
  }
 .nombre{
-    font-size: 46px;
+    font-size: 30px;
     text-align: center;
+    color: rgb(113, 113, 161);
     
 }
 

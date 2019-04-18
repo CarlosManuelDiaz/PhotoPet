@@ -93,8 +93,4 @@ app.get('/perfil', (req, res) => {
         )
 });
 
-
-
-
-
 module.exports = app

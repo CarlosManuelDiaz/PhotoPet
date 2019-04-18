@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import { Observable} from 'rxjs/internal/Observable';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 
 
@@ -10,10 +10,13 @@ import { Observable} from 'rxjs/internal/Observable';
 
 export class DataApiService {
 
+  public rootUrl = 'http://192.168.1.37:3000';
+
   constructor(private http: HttpClient) { }
 
-  getAllImages(){
-    const url_api='http://localhost:3000/general';
+  getAllImages() {
+       const url_api = this.rootUrl + '/general';
+    //const url_api='http://localhost:3000';
     return this.http.get(url_api);
   }
 
@@ -21,5 +24,5 @@ export class DataApiService {
     const url_api='http://localhost:3000/general/${id}';
     return (this.imagen=this.http.get(url_api));
   }*/
-  
+
 } 

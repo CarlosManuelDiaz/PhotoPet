@@ -35,12 +35,7 @@ export class productospage implements OnInit {
     {
       nombre: 'Marcos',
       url: '/nuria',
-<<<<<<< HEAD:src/app/contactos/contactos.page.ts
-      imagen: 'assets/icon/logo-huella.png',
-      imagenicon: 'assets/icon/logo.png'
-=======
       imagen: 'assets/icon/logo.png',
->>>>>>> devalexis:src/app/productos/productos.page.ts
     },
   ];
   constructor() { }

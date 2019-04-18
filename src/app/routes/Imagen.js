@@ -10,14 +10,15 @@ var con = mysql.createConnection({
  password: "",
  database: "photopet"
 });
+
 images.get("/general", (req,res) =>{
- con.connect(function(err) {
-   if (err) throw err;
+ //con.connect(function(err) {
+   //if (err) throw err;
    con.query("SELECT * FROM images", function (err, result, fields) {
      if (err) throw err;
      console.log(result);
      res.send(result)
    });
  });
-})
+
 module.exports = images
