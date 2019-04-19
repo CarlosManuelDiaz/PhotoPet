@@ -12,6 +12,13 @@ app.use(bodyparser.json());
 
 process.env.SECRET_KEY = 'secret'
 
+var connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "photopet"
+});
+
 //registro
 app.post("/registro", (req, res) => {
     const today = new Date()
@@ -32,6 +39,7 @@ app.post("/registro", (req, res) => {
                 userData.password = hash
                 User.create(userData)
                     .then(user => {
+                        console.log(user.dataValues)
                         let token = jwt.sign(user.dataValues, process.env.SECRET_KEY, {
                             expiresIn: 1440
                         })
@@ -50,47 +58,51 @@ app.post("/registro", (req, res) => {
 })
 
 //Login
-app.post('/login', (req, res)=>{
-    User.findOne({
-        where:{
-            email: req.body.email
+app.post('/login', (req, res) => {
+    var email = req.body.email
+    var password =  req.body.password
+    connection.query("SELECT * FROM users WHERE email=? ", [email],
+        (err, result) => {
+            if (result) {
+                if (bcrypt.compareSync(password, result[0].password)) {
+                    let token = jwt.sign({
+                        id_user: result[0].id_user,
+                    }, process.env.SECRET_KEY, {
+                            expiresIn: 1440
+                        })
+                    res.json({ token: token })
+                } else {
+                    console.log('contraseña erronea')
+                }
+            } else {
+                res.send('Error' + err)
+            }
         }
-    })
-    .then(user =>{
-        if(bcrypt.compareSync(req.body.password, user.password)){
-            let token = jwt.sign(user.dataValues, process.env.SECRET_KEY, {
-                expiresIn: 1440
-            })
-            res.json({token: token})
-        }else{
-            res.send('Revise los datos introducidos')
-        }
-    })
-    .catch(err => {
-        res.send("error" + err)
-    })
+    );
 })
 
-var connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "photopet"
-  });
 
 //perfil
 app.get('/perfil', (req, res) => {
     var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
     var id_user = decoded.id_user
         connection.query("SELECT user_name, id_photo_perfil, imagesprofile.urlphoto FROM users INNER JOIN imagesprofile ON users.id_user = imagesprofile.id_user WHERE users.id_user=? ", [id_user],
-            function (err, result) {
+            (err, result) => {
                 if (result) {
                     res.json(result)
                 } else {
-                    res.send(err)
+                    res.send('error' + err)
                 }
             }
         )
 });
+
+app.get('/subirimagen', (req, res) => {
+console.log(req.body.imageData)
+})
+
+
+
+
 
 module.exports = app

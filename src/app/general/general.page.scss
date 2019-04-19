@@ -1,16 +1,29 @@
 ion-content {
-    --background: -webkit-linear-gradient(#c3c8ce, #7edff0);
+  --background: -webkit-linear-gradient(#c3c8ce, #7edff0);
 }
 
 .loguito {
-    width: 60px;
-    height: 60px;
+  width: 60px;
+  height: 60px;
 }
-  
-   ion-button{
-        font-size: 8px;
-        width: 40px;
-        height: 35px;
-        --background: rgb(95, 11, 53);}
 
+ion-button {
+  font-size: 8px;
+  width: 40px;
+  height: 35px;
+  --background: rgb(95, 11, 53);
+}
 
+ion-card {
+  --background: rgb(255, 255, 255);
+}
+
+.likes {
+  margin-top: -5px;
+  margin-left: 5px;
+  color: #226666;
+}
+.like {
+  margin-top: 10px;
+  margin-left: 5px;
+}
