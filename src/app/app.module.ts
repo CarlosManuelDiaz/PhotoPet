@@ -15,12 +15,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {AuthenticationService} from './authentication.service';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthGuardService } from './auth-guard.service';
-
+import { ImagesService } from './images.service';
+import { HttpModule} from '@angular/http';
+import { FileTransfer} from '@ionic-native/file-transfer/ngx';
 
 import { PageModalPageModule } from './page-modal/page-modal.module';
 import {  EditarPageModule } from './editar/editar.module';
 import { ActividadesPageModule} from './actividades/actividades.module';
 import { DataApiService } from './data-api.service';
+import { UploadModalPageModule } from './upload-modal/upload-modal.module';
 
 
 
@@ -38,6 +41,8 @@ import { DataApiService } from './data-api.service';
     PageModalPageModule,
     EditarPageModule,
     ActividadesPageModule,
+    HttpModule,
+    UploadModalPageModule,
   ],
   providers: [
     StatusBar,
@@ -48,6 +53,8 @@ import { DataApiService } from './data-api.service';
     AuthenticationService,
     AuthGuardService,
     DataApiService,
+    ImagesService,
+    FileTransfer,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

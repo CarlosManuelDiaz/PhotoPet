@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 import { AuthenticationService, UserDetails } from '../authentication.service';
 
-import { ModalController } from '@ionic/angular';
+import { ModalController, NavController } from '@ionic/angular';
 import { ImagenmodalPage } from '../page-modal/page-modal.page';
-import {  EditarPage } from '../editar/editar.page';
+import { EditarPage } from '../editar/editar.page';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { ImagesService } from '../images.service';
+import { UploadModalPage } from '../upload-modal/upload-modal.page';
 
 
 
@@ -17,14 +20,17 @@ import { HttpClient } from '@angular/common/http';
 export class PerfilPage implements OnInit {
 
   public details: UserDetails;
-  public imagenes = [];
-  public rootUrl = 'http://192.168.1.53:3000';
+  public images: any = [];
+  public base64Image: string;
+
 
 
   constructor(private camera: Camera,
-    private modalCtrl: ModalController,
+    public modalCtrl: ModalController,
     private auth: AuthenticationService,
-    private http: HttpClient,
+    public navCtrl: NavController,
+    public http: HttpClient,
+    private imagesService: ImagesService,
     ) {}
 
 
@@ -38,24 +44,40 @@ export class PerfilPage implements OnInit {
       }
     );
   }
-  takePicture() {
-    const options: CameraOptions = {
-      quality: 50,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE,
+  reloadImages() {
+    this.imagesService.getImages().subscribe(data => {
+      this.images = data;
+    });
+  }
+  deleteImage(img) {
+    this.imagesService.deleteImage(img).subscribe(data => {
+      this.reloadImages();
+    });
+  }
+
+   takePicture() {
+    const options = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.FILE_URI,
+      sourceType: this.camera.PictureSourceType.CAMERA,
+      savetoPhotoAlbum: false,
       correctOrientation: true,
     };
 
-    this.camera.getPicture(options).then(
-      imageData => {
-        return this.http.post(this.rootUrl + '/subirimagen', imageData);
-      },
-      err => {
-      // Handle error
-      console.log('Camera issue:' + err);
-    }
-    );
+    this.camera.getPicture(options).then(async (imagePath) => {
+      const modal = await this.modalCtrl.create(
+        {component: UploadModalPage,
+          componentProps:
+          { data: imagePath }});
+      modal.present();
+      modal.onDidDismiss().then(data => {
+        if (data) {
+          this.reloadImages();
+        }
+      });
+    }, (err) => {
+      console.log('Error: ', err);
+    });
   }
 
   galeria() {
@@ -66,8 +88,8 @@ export class PerfilPage implements OnInit {
       correctOrientation: true,
       };
       this.camera.getPicture(options).then((imageData) => {
-      this.imagenes.push({ rutaimagen: 'data:image/jpeg;base64,' + imageData});
-      }, (err) => {
+        this.base64Image = 'data:image/jpeg;base64,' + imageData;
+        }, (err) => {
         // Handle error
         console.log('Camera issue:' + err);
       });

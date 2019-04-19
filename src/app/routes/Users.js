@@ -62,15 +62,18 @@ app.post('/login', (req, res) => {
     var email = req.body.email
     var password =  req.body.password
     connection.query("SELECT * FROM users WHERE email=? ", [email],
-        (err, result)=>{
+        (err, result) => {
             if (result) {
-                (bcrypt.compareSync(password, result[0].password))
-                let token = jwt.sign( {
-                    id_user: result[0].id_user,
-                }, process.env.SECRET_KEY, {
-                    expiresIn: 1440
-                })
-                res.json({ token: token })
+                if (bcrypt.compareSync(password, result[0].password)) {
+                    let token = jwt.sign({
+                        id_user: result[0].id_user,
+                    }, process.env.SECRET_KEY, {
+                            expiresIn: 1440
+                        })
+                    res.json({ token: token })
+                } else {
+                    console.log('contraseña erronea')
+                }
             } else {
                 res.send('Error' + err)
             }
@@ -95,7 +98,7 @@ app.get('/perfil', (req, res) => {
 });
 
 app.get('/subirimagen', (req, res) => {
-console.log(req.imageData)
+console.log(req.body.imageData)
 })
 
 

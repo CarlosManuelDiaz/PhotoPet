@@ -30,11 +30,14 @@ const routes: Routes = [
   {
     path: 'general',
     loadChildren: './general/general.module#GeneralPageModule',
-    // canActivate: [AuthGuardService] 
+    // canActivate: [AuthGuardService]
   },
 
   { path: 'actividades',
-   loadChildren: './actividades/actividades.module#ActividadesPageModule' }
+   loadChildren: './actividades/actividades.module#ActividadesPageModule' },
+  { path: 'upload-modal', loadChildren: './upload-modal/upload-modal.module#UploadModalPageModule' },
+
+
 
 ];
 
