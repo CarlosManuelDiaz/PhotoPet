@@ -11,7 +11,7 @@ import { ImagenmodalPage } from '../page-modal/page-modal.page';
 export class ActividadesPage implements OnInit {
 
   public actividades = [{
-    titulo: 'Vista el sábado 4 de Abril al Parque Juan Carlos I (Madrid)',
+    titulo: 'Visita el sábado 4 de Abril al Parque Juan Carlos I (Madrid)',
     subtitulo: 'Es una amplia zona verde, ideal para pasear con tu perro, situada en la zona nordeste de la capital, su parque canino ocupa unos 5.000 m2. Su gran punto fuerte es que la zona vallada habilitada para los perros cuenta con instalaciones para practicar agility, bancos, bebedero y pipican, podrán correr y jugar con otros perros sin problema.',
     imagen: '../../assets/img/Juancarlos1.jpg',
   }, {

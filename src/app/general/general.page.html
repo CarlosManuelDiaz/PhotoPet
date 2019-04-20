@@ -1,39 +1,37 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="end">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <ion-buttons slot="start">
-        <ion-back-button defaultHref="perfil" ></ion-back-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="perfil"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content>
-  
-    <ion-grid>
-      <ion-row>
-        <ion-col class="loguito" size="2"><img src="../assets/img/logo.png"></ion-col>
-        <ion-col size="10"> </ion-col></ion-row>
-    </ion-grid>
-    
-    <ion-grid>
-      <ion-row >
-        <ion-col size="1"> </ion-col>
-        <ion-col size="10" align-items-center>
-          <ion-card *ngFor="let foto of images" > 
-            <ion-img [src]=foto.photo></ion-img>  
-           <!-- <img class="logopag" src="../assets/icon/logo-huella.png">
-             <ion-card-subtitle color="" *ngFor="let comentario of comentarios">{{comentario.comentario}}</ion-card-subtitle> -->
-            <ion-input placeholder="añadir" type="text"></ion-input> --> 
-            <ion-button  (click)="add()" class="boton" >Añadir</ion-button> 
-            <ion-icon name="paw" style="font-size:25px" (click)="addLike()"></ion-icon>
-            <p class="add">{{add}}</p>
-             </ion-card>
-
-         <!-- <ion-card>{{images|json}}</ion-card>-->
-        </ion-col>
-        <ion-col size="1"> </ion-col>
-      </ion-row>
-    </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="loguito" size="2"><img src="../assets/img/logo.png"></ion-col>
+      <ion-col size="10"> </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+   <ion-col size="1"></ion-col>
+     <ion-col>
+        <ion-card *ngFor="let foto of images">
+          <ion-img [src]=foto.photo></ion-img>
+          <ion-card-title color="dark">
+            <ion-icon style="font-size: 32px" name="paw" class="like" (click)="addLike()"></ion-icon>
+          </ion-card-title>
+          <ion-card-subtitle>
+          <span style="font-size: 16px" class="likes">{{add}} Patitas</span>
+        </ion-card-subtitle>
+        <span>{{foto.comment}}</span>
+          <ion-input placeholder="Añadir comentario" type="text" [(ngModel)]="comments"></ion-input>
+          <ion-button (click)="addcomment(comments)" class="boton">Enviar</ion-button>
+        </ion-card>
+      </ion-col>
+    <ion-col size="1"></ion-col>    
+  </ion-grid>
 </ion-content>
