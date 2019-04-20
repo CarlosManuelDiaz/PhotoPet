@@ -26,8 +26,10 @@ var con = mysql.createConnection({
 });
 
 images.get("/general", (req,res) =>{
-   con.query("SELECT * FROM images INNER JOIN comments ON images.id_images = comments.id_images", function (err, result, fields) {
+   con.query("SELECT * FROM images INNER JOIN comments ON images.id_images = comments.id_images LEFT JOIN users ON images.id_user = users.id_user ORDER BY images.id_images desc", 
+   function (err, result, fields) {
     res.send(result)
+    console.log(result)
    })
   });
  

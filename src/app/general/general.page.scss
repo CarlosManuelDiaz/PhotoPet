@@ -1,29 +1,49 @@
-ion-content {
-  --background: -webkit-linear-gradient(#c3c8ce, #7edff0);
-}
 
-.loguito {
-  width: 60px;
-  height: 60px;
-}
-
-ion-button {
-  font-size: 8px;
+.circular--landscape {
+  display: inline-block;
+  position: relative;
   width: 40px;
-  height: 35px;
-  --background: rgb(95, 11, 53);
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  border-color: rgb(125, 125, 187);
 }
-
-ion-card {
-  --background: rgb(255, 255, 255);
+    
+.loguito {
+  width: 15px;
+  height: 15px;
 }
-
-.likes {
-  margin-top: -5px;
+.circular--landscape img {
+  width: auto;
+  height: auto;
+}
+.usuario{
   margin-left: 5px;
-  color: #226666;
+  font-size: 22px;
+
 }
-.like {
-  margin-top: 10px;
-  margin-left: 5px;
+ion-content{
+  --background: white;
+}
+.header{
+  --background: white;
+
+}
+ion-card{
+  --background: white;
+}
+.icon-space{
+  margin-left: 10px;
+  margin-top: 5px;
+  color: black;
+}
+.comentarios{
+  color: black;
+}
+.user{
+  border-color: white;
+  border: 5px;
+}
+.boton{
+  float: right;
 }

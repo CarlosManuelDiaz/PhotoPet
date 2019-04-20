@@ -44,51 +44,51 @@ export class PerfilPage implements OnInit {
       }
     );
   }
-  reloadImages() {
-    this.imagesService.getImages().subscribe(data => {
-      this.images = data;
-    });
-  }
-  deleteImage(img) {
-    this.imagesService.deleteImage(img).subscribe(data => {
-      this.reloadImages();
-    });
-  }
+  // reloadImages() {
+  //   this.imagesService.getImages().subscribe(data => {
+  //     this.images = data;
+  //   });
+  // }
+  // deleteImage(img) {
+  //   this.imagesService.deleteImage(img).subscribe(data => {
+  //     this.reloadImages();
+  //   });
+  // }
 
    takePicture() {
     const options = {
       quality: 100,
-      destinationType: this.camera.DestinationType.FILE_URI,
+      destinationType: this.camera.DestinationType.DATA_URL,
       sourceType: this.camera.PictureSourceType.CAMERA,
       savetoPhotoAlbum: false,
       correctOrientation: true,
     };
 
-    this.camera.getPicture(options).then(async (imagePath) => {
-      const modal = await this.modalCtrl.create(
-        {component: UploadModalPage,
-          componentProps:
-          { data: imagePath }});
-      modal.present();
-      modal.onDidDismiss().then(data => {
-        if (data) {
-          this.reloadImages();
-        }
-      });
-    }, (err) => {
+    this.camera.getPicture(options).then((imageData) => {
+      this.images.push({ rutaimagen: 'data:image/jpeg;base64,' + imageData});
+      // const modal = await this.modalCtrl.create(
+      //   {component: UploadModalPage,
+      //     componentProps:
+      //     { data: imagePath }});
+      // modal.present();
+      // modal.onDidDismiss().then(data => {
+      //   if (data) {
+      //     this.reloadImages();
+        },
+        (err) => {
       console.log('Error: ', err);
     });
   }
 
   galeria() {
     const options: CameraOptions = {
-      quality: 50,
+      quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
       sourceType : this.camera.PictureSourceType.PHOTOLIBRARY,
       correctOrientation: true,
       };
       this.camera.getPicture(options).then((imageData) => {
-        this.base64Image = 'data:image/jpeg;base64,' + imageData;
+        this.images.push({ rutaimagen: 'data:image/jpeg;base64,' + imageData});
         }, (err) => {
         // Handle error
         console.log('Camera issue:' + err);

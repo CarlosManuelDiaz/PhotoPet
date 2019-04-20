@@ -45,9 +45,7 @@
       
       <ion-col size="1"></ion-col>
       <ion-col>
-        <ion-input class="descripcion">Hola :), me llamo Noa y soy una perrita afortunada, tengo unos dueños que me 
-          quieren mucho, me encanta salir a pasear y que me den jamon y pollo, y sobre todo dormir largas siestas 
-        en mi sofa ¡¡  </ion-input>
+        <ion-input class="descripcion">{{details[0].descripcion}}</ion-input>
       </ion-col>
       <ion-col size="1"></ion-col>
     </ion-row>
@@ -60,7 +58,7 @@
           src="{{detail.urlphoto}}"
           (click)="verImagen(detail.urlphoto, detail.user_name)"/>
       </ion-col>
-      <ion-col size="6" *ngFor='let imagen of imagenes'>
+      <ion-col size="6" *ngFor='let imagen of images'>
         <img
           class="galeria"
           src="{{imagen.rutaimagen}}"

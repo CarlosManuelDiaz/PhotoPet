@@ -86,10 +86,11 @@ app.post('/login', (req, res) => {
 app.get('/perfil', (req, res) => {
     var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
     var id_user = decoded.id_user
-        connection.query("SELECT user_name, id_photo_perfil, imagesprofile.urlphoto FROM users INNER JOIN imagesprofile ON users.id_user = imagesprofile.id_user WHERE users.id_user=? ", [id_user],
+        connection.query("SELECT user_name, id_photo_perfil, descripcion, imagesprofile.urlphoto FROM users INNER JOIN imagesprofile ON users.id_user = imagesprofile.id_user WHERE users.id_user=? ", [id_user],
             (err, result) => {
                 if (result) {
                     res.json(result)
+                    console.log(result)
                 } else {
                     res.send('error' + err)
                 }

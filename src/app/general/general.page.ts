@@ -14,11 +14,11 @@ export class GeneralPage implements OnInit {
 
  constructor(private dataApi: DataApiService) {}
 
-private images: ImageData;
+public images: ImageData;
 
-private add: number = 2;
+public add = 35;
 
-private comentarios = [];
+public comentarios = [];
 model: any = {};
 
 ngOnInit() {
