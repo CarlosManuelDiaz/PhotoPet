@@ -29,14 +29,13 @@ images.get("/general", (req,res) =>{
    con.query("SELECT * FROM images INNER JOIN comments ON images.id_images = comments.id_images LEFT JOIN users ON images.id_user = users.id_user ORDER BY images.id_images desc", 
    function (err, result, fields) {
     res.send(result)
-    console.log(result)
    })
   });
  
   
-images.post("/upload", upload.single('image'), (req, res, next) => {
-  console.log(req.file.filename, req.file.originalname, req.body.desc,  req.file)
-});
+// images.post("/upload", upload.single('image'), (req, res, next) => {
+//   console.log(req.file.filename, req.file.originalname, req.body.desc,  req.file)
+// });
 
 
 module.exports = images

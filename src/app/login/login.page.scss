@@ -7,22 +7,33 @@ ion-content{
     height: 180px;
     margin-top: 100px;
     margin-left: -10px;
-   
+    opacity: 0.8;
 }
+
 .registro{
-    margin-left: -40px;
-    margin-block-end: 50px;
+    margin-left: -14px;
+    // margin-block-end: 50px;
 }
 .enviar{
-    margin-left: -25px;
-    --background: #226666;
+    margin-left: -7px;
 }
 ion-input{
     border: solid 1px black;
     margin: 10px;
-    text-align: center;
+    text-align: left;
     border-radius: 15px;
     background-color: rgba(255, 255, 255, 0.831);
     margin-left: -5px;
+}
+.recuperar{
+    margin-left: 150px;
+    font-size: 12px;
+    position: absolute;
+}
+.email{
+margin-left: 20px;
+}
+.finger-print{
+    margin-left: 20px;
 }
 

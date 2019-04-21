@@ -98,9 +98,7 @@ app.get('/perfil', (req, res) => {
         )
 });
 
-app.get('/subirimagen', (req, res) => {
-console.log(req.body.imageData)
-})
+
 
 
 
