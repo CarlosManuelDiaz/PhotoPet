@@ -34,7 +34,7 @@ images.get("/general", (req,res) =>{
  
   
 // images.post("/upload", upload.single('image'), (req, res, next) => {
-//   console.log(req.file.filename, req.file.originalname, req.body.desc,  req.file)
+//   console.log(req.file.filename, req.file.originalname, req.body.desc)
 // });
 
 
