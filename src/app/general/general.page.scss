@@ -1,0 +1,49 @@
+
+.circular--landscape {
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  border-color: rgb(125, 125, 187);
+}
+    
+.loguito {
+  width: 15px;
+  height: 15px;
+}
+.circular--landscape img {
+  width: auto;
+  height: auto;
+}
+.usuario{
+  margin-left: 5px;
+  font-size: 22px;
+
+}
+ion-content{
+  --background: white;
+}
+.header{
+  --background: white;
+
+}
+ion-card{
+  --background: white;
+}
+.icon-space{
+  margin-left: 10px;
+  margin-top: 5px;
+  color: black;
+}
+.comentarios{
+  color: black;
+}
+.user{
+  border-color: white;
+  border: 5px;
+}
+.boton{
+  float: right;
+}

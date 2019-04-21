@@ -1,0 +1,64 @@
+ion-content{
+    --background: -webkit-linear-gradient(#c3c8ce, #7edff0);
+}
+
+ .loguito {
+    width: 50px;
+    height: 50px;
+    
+ }
+
+ .circular--landscape {
+    display: inline-block;
+    position: relative;
+    width: 190px;
+    height: 190px;
+    overflow: hidden;
+    border-radius: 50%;
+    border-color: rgb(125, 125, 187);
+    margin-left: -14px;
+  }
+  
+  .circular--landscape img {
+    width: auto;
+    height: auto;  
+    border: 2px rgb(185, 185, 202);
+ }
+.nombre{
+    font-size: 46px;
+    font-family: Georgia;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-style: italic;
+    
+}
+
+.descripcion{
+    text-align: justify;
+    font-family: 'Gill Sans';
+}
+.imagen{
+    width: auto;
+    height: auto;
+}
+.galeria{
+    width:100%;
+    height: 100%;
+    margin: 0px;
+    padding: 1px;
+    object-fit: cover;
+}
+.btColor{
+    
+    ion-icon{
+        font-size: 20px;
+        color: black;
+    }
+    margin-top: 10%;
+    --background: transparent;
+}
+.icon{
+    color: black;
+    border: solid 1px rgba(0, 0, 0, 0.475);
+    border-radius: 10px;
+}

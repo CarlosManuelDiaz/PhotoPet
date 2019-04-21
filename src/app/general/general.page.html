@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="perfil"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+        <ion-card no-padding padding-bottom no-margin class="card" *ngFor="let foto of images">
+            <ion-row>
+              <ion-col class="user" size="12" >
+                <ion-item class="header"> 
+                    <div class="circular--landscape">
+                        <img class="circle-pic" src="{{foto.id_photo_perfil}}"/>
+                      </div>
+                    <p class="usuario" style="font-weight: bold">{{foto.user_name}}</p>             
+                 </ion-item>
+              </ion-col >              
+            </ion-row>     
+              <img src={{foto.photo}}>
+                  <p no-margin no-padding>
+                <ion-icon no-padding name="paw" style="font-size: 32px" class="icon-space" (click)="addLike()"></ion-icon>
+                 </p>      
+            <ion-card-content >
+              <p class="comentarios"><ion-icon name="paw"></ion-icon> {{add}} likes</p>
+              <p class="comentarios"><b>{{foto.user_name}}</b> {{foto.comment}}</p>
+                <div *ngFor="let comentario of comentarios" >
+              <p class="comentarios"><b>{{foto.user_name}}</b> {{comentario}}</p>
+                </div>
+            </ion-card-content >
+            <ion-input placeholder="Añadir comentario" type="text" [(ngModel)]="comments">
+                <ion-button (click)="addcomment(comments)"class="boton">Enviar</ion-button>
+            </ion-input>      
+          </ion-card>
+      
+</ion-content>

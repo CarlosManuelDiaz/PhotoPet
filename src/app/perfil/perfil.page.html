@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="general" ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="loguito" size="2">
+        <img src="../assets/icon/logo.png"/>
+      </ion-col>
+      <ion-col size="10"></ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3"></ion-col>
+      <ion-col ><h1 class="nombre">{{details[0].user_name}}</h1></ion-col>
+      <ion-col size="3"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+      </ion-col>
+      <ion-col size="9" align-self-start >
+        <div class="circular--landscape">
+        <img class="circle-pic" src="{{details[0].id_photo_perfil}}"
+        (click)="perfil()"/>
+      </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <!--Boton editar-->
+        <ion-col class="btColor">
+            <ion-button (click)="editarpage()" fill="clear">
+              <ion-icon class="icon" name="create"></ion-icon>
+              </ion-button>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+      
+      <ion-col size="1"></ion-col>
+      <ion-col>
+        <ion-input class="descripcion">{{details[0].descripcion}}</ion-input>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor='let detail of details'>
+        <img
+          class="galeria"
+          src="{{detail.urlphoto}}"
+          (click)="verImagen(detail.urlphoto, detail.user_name)"/>
+      </ion-col>
+      <ion-col size="6" *ngFor='let imagen of images'>
+        <img
+          class="galeria"
+          src="{{imagen.rutaimagen}}"
+          (click)="verImagen(imagen.rutaimagen, '')"/>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="takePicture()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="galeria()">
+      <ion-icon name="images"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+

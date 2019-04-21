@@ -1,0 +1,18 @@
+<ion-header (click)="cerrarModal()">
+  <ion-toolbar>
+   
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="./" ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content (click)="cerrarModal()">
+    <ion-card>
+        <ion-img class='imagen' src="{{ imagen }}">
+        </ion-img>
+        <ion-card-title class="card-title" color="dark">{{ subtitulo }}</ion-card-title>
+        <ion-card-subtitle class="card-subtitle" color="dark">{{ comentarios }}</ion-card-subtitle>
+      </ion-card>
+</ion-content>

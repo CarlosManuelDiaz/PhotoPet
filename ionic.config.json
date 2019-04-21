@@ -1,5 +1,12 @@
 {
   "name": "PhotoPet",
-  "integrations": {},
-  "type": "angular"
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "proxies": [
+    {
+     "proxyUrl": "http://localhost:3000/*"
+    }
+   ]
 }

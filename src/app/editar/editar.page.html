@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="perfil" ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="btColor">
+        <ion-button class="bton" (click)="cerrarEditarpPage()" fill="clear">
+          Cerrar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        Nombre de Usuario:
+        <ion-input placeholder="Nombre"></ion-input>
+        Password:
+        <ion-input placeholder="Password"></ion-input>
+        Repetir-Password:
+        <ion-input placeholder="Repetir-Passord"></ion-input>
+        <h6>No olvides dar click en guardar!!</h6>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button class="bton" (click)="cerrarEditarpPage()" fill="clear">Guardar</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

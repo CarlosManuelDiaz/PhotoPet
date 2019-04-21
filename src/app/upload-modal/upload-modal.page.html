@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="dismiss()"></button>
+    </ion-buttons>
+    <ion-title>uploadModal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <img [src]="imageData">
+  <ion-item>
+    <ion-input placeholder="Descripción..." [(ngModel)]="desc"></ion-input>
+  </ion-item>
+  <button ion-button full icon-left (click)="saveImage()">
+    <ion-icon name="checkmark"></ion-icon> Guardar Imagen
+  </button>
+
+</ion-content>
